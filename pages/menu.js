@@ -1,35 +1,10 @@
+import dynamic from "next/dynamic";
+const HeadImage = dynamic(() => import("../components/HeadImage"));
+
 const Menu = () => {
   return (
     <>
-      <section className="home-slider ">
-        <div
-          className="slider-item"
-          style={{
-            backgroundImage: 'url("/assets/images/bg_3.jpg")',
-            backgroundPosition: "center",
-            height: "70vh",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-          data-stellar-background-ratio="1"
-        >
-          <div className="overlay"></div>
-          <div className="container">
-            <div className="row slider-text justify-content-center align-items-center">
-              <div className="col-md-7 col-sm-12 text-center ">
-                <h1 className="mb-3 mt-5 bread">Our Menu</h1>
-                <p className="breadcrumbs">
-                  <span className="mr-2">
-                    <a href="index.html">Home</a>
-                  </span>
-                  <span>Menu</span>
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <HeadImage title="Our Menu" currentPath="menu" />
       <section className="ftco-section">
         <div className="container">
           <div className="row">
@@ -402,7 +377,7 @@ const Menu = () => {
             </div>
           </div>
         </div>
-      </section>{" "}
+      </section>
     </>
   );
 };

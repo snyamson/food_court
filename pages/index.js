@@ -5,6 +5,7 @@ const Info = dynamic(() => import("../components/Info"));
 const HomeMenu = dynamic(() => import("../components/HomeMenu"));
 const HomeSpecial = dynamic(() => import("../components/HomeSpecial"));
 const Features = dynamic(() => import("../components/Features"));
+const Post = dynamic(() => import("../components/Post"));
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
       <HomeMenu />
       <Features />
       <HomeSpecial />
+      <Post />
     </>
   );
 }

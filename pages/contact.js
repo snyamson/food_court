@@ -12,7 +12,7 @@ const Contact = () => {
                 <div className="col-md-12 mb-3">
                   <p>
                     <span>Address:</span> John Teye, Opposite White House, Near
-                    the Block Factory York NY 10016
+                    the Block Factory
                   </p>
                 </div>
                 <div className="col-md-12 mb-3">
