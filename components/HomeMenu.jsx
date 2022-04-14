@@ -1,17 +1,13 @@
+import dynamic from "next/dynamic";
+const MenuHead = dynamic(() => import("../containers/MenuHead"));
+
 const HomeMenu = () => {
   return (
     <>
       <section className="ftco-menu">
         <div className="container">
           <div className="row justify-content-center mb-5">
-            <div className="col-md-7 heading-section text-center ">
-              <span className="subheading">Discover</span>
-              <h2 className="mb-4">Our Products</h2>
-              <p>
-                Far far away, behind the word mountains, far from the countries
-                Vokalia and Consonantia, there live the blind texts.
-              </p>
-            </div>
+            <MenuHead menuTitle="Special Menu" subTitle="Priscy" />
           </div>
           <div className="row d-md-flex">
             <div className="col-lg-12  p-md-5">

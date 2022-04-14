@@ -1,3 +1,6 @@
+import Link from "next/link";
+import Image from "next/image";
+
 const Navigation = () => {
   return (
     <>
@@ -6,9 +9,16 @@ const Navigation = () => {
         id="ftco-navbar"
       >
         <div className="container">
-          <a className="navbar-brand" href="index.html">
-            Priscy<small>Food court</small>
-          </a>
+          <Link href="/">
+            <a className="navbar-brand" href="">
+              <Image
+                src="/assets/images/logo.jpg"
+                alt=""
+                height={50}
+                width={100}
+              />
+            </a>
+          </Link>
           <button
             className="navbar-toggler"
             type="button"
@@ -18,73 +28,44 @@ const Navigation = () => {
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            <span className="oi oi-menu"></span> Menu
+            <span className="oi oi-menu"></span>
           </button>
           <div className="collapse navbar-collapse" id="ftco-nav">
             <ul className="navbar-nav ml-auto">
-              <li className="nav-item active">
-                <a href="index.html" className="nav-link">
-                  Home
-                </a>
+              <li className="nav-item ">
+                <Link href="/">
+                  <a className="nav-link">Home</a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a href="menu.html" className="nav-link">
-                  Menu
-                </a>
+                <Link href="/menu">
+                  <a className="nav-link">Menu</a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a href="services.html" className="nav-link">
-                  Services
-                </a>
+                <Link href="/post">
+                  <a className="nav-link">Blog</a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a href="blog.html" className="nav-link">
-                  Blog
-                </a>
+                <Link href="/about">
+                  <a className="nav-link">About</a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a href="about.html" className="nav-link">
-                  About
-                </a>
-              </li>
-              <li className="nav-item dropdown">
-                <a
-                  className="nav-link dropdown-toggle"
-                  href="room.html"
-                  id="dropdown04"
-                  data-toggle="dropdown"
-                  aria-haspopup="true"
-                  aria-expanded="false"
-                >
-                  Shop
-                </a>
-                <div className="dropdown-menu" aria-labelledby="dropdown04">
-                  <a className="dropdown-item" href="shop.html">
-                    Shop
-                  </a>
-                  <a className="dropdown-item" href="product-single.html">
-                    Single Product
-                  </a>
-                  <a className="dropdown-item" href="room.html">
-                    Cart
-                  </a>
-                  <a className="dropdown-item" href="checkout.html">
-                    Checkout
-                  </a>
-                </div>
-              </li>
-              <li className="nav-item">
-                <a href="contact.html" className="nav-link">
-                  Contact
-                </a>
+                <Link href="/contact">
+                  <a className="nav-link">Contact</a>
+                </Link>
               </li>
               <li className="nav-item cart">
-                <a href="cart.html" className="nav-link">
-                  <span className="icon icon-shopping_cart"></span>
-                  <span className="bag d-flex justify-content-center align-items-center">
-                    <small>1</small>
-                  </span>
-                </a>
+                <Link href="/cart">
+                  <a className="nav-link">
+                    <span className="icon icon-shopping_cart"></span>
+                    <span className="bag d-flex justify-content-center align-items-center">
+                      <small>1</small>
+                    </span>
+                  </a>
+                </Link>
               </li>
             </ul>
           </div>

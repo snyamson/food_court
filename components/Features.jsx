@@ -38,7 +38,7 @@ const Features = () => {
                   <span className="flaticon-coffee-bean"></span>
                 </div>
                 <div className="media-body">
-                  <h3 className="heading">Quality Coffee</h3>
+                  <h3 className="heading">Quality Service</h3>
                   <p>
                     Even the all-powerful Pointing has no control about the
                     blind texts it is an almost unorthographic.

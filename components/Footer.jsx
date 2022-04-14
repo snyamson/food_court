@@ -133,7 +133,12 @@ const Footer = () => {
                 <div className="block-23 mb-3">
                   <ul>
                     <li>
-                      <span className="icon icon-map-marker"></span>
+                      <span
+                        className="icon icon-map-marker"
+                        style={{
+                          color: "#fd0000",
+                        }}
+                      ></span>
                       <span className="text">
                         203 Fake St. Mountain View, San Francisco, California,
                         USA
@@ -141,13 +146,23 @@ const Footer = () => {
                     </li>
                     <li>
                       <a href="#">
-                        <span className="icon icon-phone"></span>
+                        <span
+                          className="icon icon-phone"
+                          style={{
+                            color: "#fd0000",
+                          }}
+                        ></span>
                         <span className="text">+2 392 3929 210</span>
                       </a>
                     </li>
                     <li>
                       <a href="#">
-                        <span className="icon icon-envelope"></span>
+                        <span
+                          className="icon icon-envelope"
+                          style={{
+                            color: "#fd0000",
+                          }}
+                        ></span>
                         <span className="text">info@yourdomain.com</span>
                       </a>
                     </li>

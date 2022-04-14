@@ -11,11 +11,7 @@ const Info = () => {
                     <span className="icon-phone"></span>
                   </div>
                   <div className="text">
-                    <h3>000 (123) 456 7890</h3>
-                    <p>
-                      A small river named Duden flows by their place and
-                      supplies.
-                    </p>
+                    <h3>233 (0) 244 280385</h3>
                   </div>
                 </div>
                 <div className="col-md-4 d-flex ">
@@ -23,10 +19,8 @@ const Info = () => {
                     <span className="icon-my_location"></span>
                   </div>
                   <div className="text">
-                    <h3>198 West 21th Street</h3>
-                    <p>
-                      203 Fake St. Mountain View, San Francisco, California, USA
-                    </p>
+                    <h3>John Teye, </h3>
+                    <p>Opposite White House, Near the Block Factory</p>
                   </div>
                 </div>
                 <div className="col-md-4 d-flex ">
@@ -34,8 +28,8 @@ const Info = () => {
                     <span className="icon-clock-o"></span>
                   </div>
                   <div className="text">
-                    <h3>Open Monday-Friday</h3>
-                    <p>8:00am - 9:00pm</p>
+                    <h3>Open Monday-Sunday</h3>
+                    <p>8:00am - 12:00am</p>
                   </div>
                 </div>
               </div>
