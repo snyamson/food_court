@@ -140,8 +140,8 @@ const Footer = () => {
                         }}
                       ></span>
                       <span className="text">
-                        203 Fake St. Mountain View, San Francisco, California,
-                        USA
+                        John Teye, Opposite White House, Near the Block Factory
+                        - Accra Ghana
                       </span>
                     </li>
                     <li>
@@ -152,7 +152,7 @@ const Footer = () => {
                             color: "#fd0000",
                           }}
                         ></span>
-                        <span className="text">+2 392 3929 210</span>
+                        <span className="text"> + 233 2442 803 85</span>
                       </a>
                     </li>
                     <li>
@@ -163,7 +163,7 @@ const Footer = () => {
                             color: "#fd0000",
                           }}
                         ></span>
-                        <span className="text">info@yourdomain.com</span>
+                        <span className="text"> info@prsicyfoodcourt.com</span>
                       </a>
                     </li>
                   </ul>
