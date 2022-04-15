@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import Slider from "react-slick";
-import styles from "../styles/Banner.module.css";
+import styles from "../styles/banner.module.css";
 import SlideItem from "./SlideItem";
 
 const Banner = () => {
