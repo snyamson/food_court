@@ -12,6 +12,7 @@ const Info = () => {
                   </div>
                   <div className="text">
                     <h3>233 (0) 244 280385</h3>
+                    <p>Call & Whatsapp Available</p>
                   </div>
                 </div>
                 <div className="col-md-4 d-flex ">
@@ -20,7 +21,10 @@ const Info = () => {
                   </div>
                   <div className="text">
                     <h3>John Teye, </h3>
-                    <p>Opposite White House, Near the Block Factory</p>
+                    <p>
+                      Opposite White House, Near the Block Factory. (Accra
+                      Ghana)
+                    </p>
                   </div>
                 </div>
                 <div className="col-md-4 d-flex ">

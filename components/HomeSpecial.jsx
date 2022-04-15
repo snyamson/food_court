@@ -27,7 +27,7 @@ const HomeSpecial = () => {
                     A small river named Duden flows by their place and supplies
                   </p>
                   <p className="price">
-                    <span>$5.90</span>
+                    <span>&#8373;5.90</span>
                   </p>
                   <p>
                     <a href="#" className="btn btn-primary btn-outline-primary">
@@ -54,7 +54,7 @@ const HomeSpecial = () => {
                     A small river named Duden flows by their place and supplies
                   </p>
                   <p className="price">
-                    <span>$5.90</span>
+                    <span>&#8373;5.90</span>
                   </p>
                   <p>
                     <a href="#" className="btn btn-primary btn-outline-primary">
@@ -81,7 +81,7 @@ const HomeSpecial = () => {
                     A small river named Duden flows by their place and supplies
                   </p>
                   <p className="price">
-                    <span>$5.90</span>
+                    <span>&#8373;5.90</span>
                   </p>
                   <p>
                     <a href="#" className="btn btn-primary btn-outline-primary">
@@ -108,7 +108,7 @@ const HomeSpecial = () => {
                     A small river named Duden flows by their place and supplies
                   </p>
                   <p className="price">
-                    <span>$5.90</span>
+                    <span>&#8373;5.90</span>
                   </p>
                   <p>
                     <a href="#" className="btn btn-primary btn-outline-primary">

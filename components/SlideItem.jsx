@@ -1,4 +1,4 @@
-import styles from "../styles/banner.module.css";
+import styles from "../styles/Banner.module.css";
 
 const SlideItem = ({ image }) => {
   return (

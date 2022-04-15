@@ -84,7 +84,7 @@ const HomeMenu = () => {
                                 from the countries Vokalia and Consonantia.
                               </p>
                               <p className="price">
-                                <span>$2.90</span>
+                                <span>&#8373;2.90</span>
                               </p>
                               <p>
                                 <a
@@ -116,7 +116,7 @@ const HomeMenu = () => {
                                 from the countries Vokalia and Consonantia.
                               </p>
                               <p className="price">
-                                <span>$2.90</span>
+                                <span>&#8373;2.90</span>
                               </p>
                               <p>
                                 <a
@@ -148,7 +148,7 @@ const HomeMenu = () => {
                                 from the countries Vokalia and Consonantia.
                               </p>
                               <p className="price">
-                                <span>$2.90</span>
+                                <span>&#8373;2.90</span>
                               </p>
                               <p>
                                 <a
@@ -190,7 +190,7 @@ const HomeMenu = () => {
                                 from the countries Vokalia and Consonantia.
                               </p>
                               <p className="price">
-                                <span>$2.90</span>
+                                <span>&#8373;2.90</span>
                               </p>
                               <p>
                                 <a
@@ -222,7 +222,7 @@ const HomeMenu = () => {
                                 from the countries Vokalia and Consonantia.
                               </p>
                               <p className="price">
-                                <span>$2.90</span>
+                                <span>&#8373;2.90</span>
                               </p>
                               <p>
                                 <a
@@ -254,7 +254,7 @@ const HomeMenu = () => {
                                 from the countries Vokalia and Consonantia.
                               </p>
                               <p className="price">
-                                <span>$2.90</span>
+                                <span>&#8373;2.90</span>
                               </p>
                               <p>
                                 <a
@@ -296,7 +296,7 @@ const HomeMenu = () => {
                                 from the countries Vokalia and Consonantia.
                               </p>
                               <p className="price">
-                                <span>$2.90</span>
+                                <span>&#8373;2.90</span>
                               </p>
                               <p>
                                 <a
@@ -328,7 +328,7 @@ const HomeMenu = () => {
                                 from the countries Vokalia and Consonantia.
                               </p>
                               <p className="price">
-                                <span>$2.90</span>
+                                <span>&#8373;2.90</span>
                               </p>
                               <p>
                                 <a
@@ -360,7 +360,7 @@ const HomeMenu = () => {
                                 from the countries Vokalia and Consonantia.
                               </p>
                               <p className="price">
-                                <span>$2.90</span>
+                                <span>&#8373;2.90</span>
                               </p>
                               <p>
                                 <a

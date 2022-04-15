@@ -22,7 +22,7 @@ const Menu = () => {
                     <h3>
                       <span>Cornish - Mackerel</span>
                     </h3>
-                    <span className="price">$20.00</span>
+                    <span className="price">&#8373;20.00</span>
                   </div>
                   <div className="d-block">
                     <p>
@@ -44,7 +44,7 @@ const Menu = () => {
                     <h3>
                       <span>Roasted Steak</span>
                     </h3>
-                    <span className="price">$29.00</span>
+                    <span className="price">&#8373;29.00</span>
                   </div>
                   <div className="d-block">
                     <p>
@@ -66,7 +66,7 @@ const Menu = () => {
                     <h3>
                       <span>Seasonal Soup</span>
                     </h3>
-                    <span className="price">$20.00</span>
+                    <span className="price">&#8373;20.00</span>
                   </div>
                   <div className="d-block">
                     <p>
@@ -88,7 +88,7 @@ const Menu = () => {
                     <h3>
                       <span>Chicken Curry</span>
                     </h3>
-                    <span className="price">$20.00</span>
+                    <span className="price">&#8373;20.00</span>
                   </div>
                   <div className="d-block">
                     <p>
@@ -114,7 +114,7 @@ const Menu = () => {
                     <h3>
                       <span>Sea Trout</span>
                     </h3>
-                    <span className="price">$49.91</span>
+                    <span className="price">&#8373;49.91</span>
                   </div>
                   <div className="d-block">
                     <p>
@@ -136,7 +136,7 @@ const Menu = () => {
                     <h3>
                       <span>Roasted Beef</span>
                     </h3>
-                    <span className="price">$20.00</span>
+                    <span className="price">&#8373;20.00</span>
                   </div>
                   <div className="d-block">
                     <p>
@@ -158,7 +158,7 @@ const Menu = () => {
                     <h3>
                       <span>Butter Fried Chicken</span>
                     </h3>
-                    <span className="price">$20.00</span>
+                    <span className="price">&#8373;20.00</span>
                   </div>
                   <div className="d-block">
                     <p>
@@ -180,7 +180,7 @@ const Menu = () => {
                     <h3>
                       <span>Chiken Filet</span>
                     </h3>
-                    <span className="price">$20.00</span>
+                    <span className="price">&#8373;20.00</span>
                   </div>
                   <div className="d-block">
                     <p>
@@ -206,7 +206,7 @@ const Menu = () => {
                     <h3>
                       <span>Cornish - Mackerel</span>
                     </h3>
-                    <span className="price">$20.00</span>
+                    <span className="price">&#8373;20.00</span>
                   </div>
                   <div className="d-block">
                     <p>
@@ -228,7 +228,7 @@ const Menu = () => {
                     <h3>
                       <span>Roasted Steak</span>
                     </h3>
-                    <span className="price">$29.00</span>
+                    <span className="price">&#8373;29.00</span>
                   </div>
                   <div className="d-block">
                     <p>
@@ -250,7 +250,7 @@ const Menu = () => {
                     <h3>
                       <span>Seasonal Soup</span>
                     </h3>
-                    <span className="price">$20.00</span>
+                    <span className="price">&#8373;20.00</span>
                   </div>
                   <div className="d-block">
                     <p>
@@ -272,7 +272,7 @@ const Menu = () => {
                     <h3>
                       <span>Chicken Curry</span>
                     </h3>
-                    <span className="price">$20.00</span>
+                    <span className="price">&#8373;20.00</span>
                   </div>
                   <div className="d-block">
                     <p>
@@ -298,7 +298,7 @@ const Menu = () => {
                     <h3>
                       <span>Sea Trout</span>
                     </h3>
-                    <span className="price">$49.91</span>
+                    <span className="price">&#8373;49.91</span>
                   </div>
                   <div className="d-block">
                     <p>
@@ -320,7 +320,7 @@ const Menu = () => {
                     <h3>
                       <span>Roasted Beef</span>
                     </h3>
-                    <span className="price">$20.00</span>
+                    <span className="price">&#8373;20.00</span>
                   </div>
                   <div className="d-block">
                     <p>
@@ -342,7 +342,7 @@ const Menu = () => {
                     <h3>
                       <span>Butter Fried Chicken</span>
                     </h3>
-                    <span className="price">$20.00</span>
+                    <span className="price">&#8373;20.00</span>
                   </div>
                   <div className="d-block">
                     <p>
@@ -364,7 +364,7 @@ const Menu = () => {
                     <h3>
                       <span>Chiken Filet</span>
                     </h3>
-                    <span className="price">$20.00</span>
+                    <span className="price">&#8373;20.00</span>
                   </div>
                   <div className="d-block">
                     <p>
