@@ -1,7 +1,34 @@
-import dynamic from "next/dynamic";
-const MenuHead = dynamic(() => import("../containers/MenuHead"));
+import dynamic from 'next/dynamic';
+import { useState } from 'react';
+import { AppStore } from '../utils/store';
+import HomeMenuItem from './HomeMenuItem';
+const MenuHead = dynamic(() => import('../containers/MenuHead'));
 
 const HomeMenu = () => {
+  const { foodCategory, foodProduct } = AppStore.useState((s) => s);
+  const [selected, setSelected] = useState('Pizza');
+
+  const filteredProducts = foodProduct.filter((item) =>
+    item.category.includes(selected)
+  );
+
+  const handleCategorySelect = (category) => {
+    setSelected(category);
+  };
+
+  const CategoryItem = ({ category, onClick }) => {
+    const { title } = category;
+    return (
+      <a
+        className={`nav-link ${selected === title ? 'active' : null}`}
+        role="tab"
+        onClick={onClick}
+      >
+        {title}
+      </a>
+    );
+  };
+
   return (
     <>
       <section className="ftco-menu">
@@ -13,368 +40,27 @@ const HomeMenu = () => {
             <div className="col-lg-12  p-md-5">
               <div className="row">
                 <div className="col-md-12 nav-link-wrap mb-5">
-                  <div
-                    className="nav  nav-pills justify-content-center"
-                    id="v-pills-tab"
-                    role="tablist"
-                    aria-orientation="vertical"
-                  >
-                    <a
-                      className="nav-link active"
-                      id="v-pills-1-tab"
-                      data-toggle="pill"
-                      href="#v-pills-1"
-                      role="tab"
-                      aria-controls="v-pills-1"
-                      aria-selected="true"
-                    >
-                      Main Dish
-                    </a>
-
-                    <a
-                      className="nav-link"
-                      id="v-pills-2-tab"
-                      data-toggle="pill"
-                      href="#v-pills-2"
-                      role="tab"
-                      aria-controls="v-pills-2"
-                      aria-selected="false"
-                    >
-                      Drinks
-                    </a>
-
-                    <a
-                      className="nav-link"
-                      id="v-pills-3-tab"
-                      data-toggle="pill"
-                      href="#v-pills-3"
-                      role="tab"
-                      aria-controls="v-pills-3"
-                      aria-selected="false"
-                    >
-                      Desserts
-                    </a>
+                  <div className="nav  nav-pills justify-content-center">
+                    {foodCategory.map((category) => (
+                      <CategoryItem
+                        key={category._id}
+                        category={category}
+                        onClick={() => handleCategorySelect(category.title)}
+                      />
+                    ))}
                   </div>
                 </div>
-                <div className="col-md-12 d-flex align-items-center">
-                  <div className="tab-content " id="v-pills-tabContent">
-                    <div
-                      className="tab-pane fade show active"
-                      id="v-pills-1"
-                      role="tabpanel"
-                      aria-labelledby="v-pills-1-tab"
-                    >
-                      <div className="row">
-                        <div className="col-md-4 text-center">
-                          <div className="menu-wrap">
-                            <a
-                              href="#"
-                              className="menu-img img mb-4"
-                              style={{
-                                backgroundImage:
-                                  'url("/assets/images/dish-1.jpg")',
-                              }}
-                            ></a>
-                            <div className="text">
-                              <h3>
-                                <a href="#">Grilled Beef</a>
-                              </h3>
-                              <p>
-                                Far far away, behind the word mountains, far
-                                from the countries Vokalia and Consonantia.
-                              </p>
-                              <p className="price">
-                                <span>&#8373;2.90</span>
-                              </p>
-                              <p>
-                                <a
-                                  href="#"
-                                  className="btn btn-primary btn-outline-primary"
-                                >
-                                  Add to cart
-                                </a>
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="col-md-4 text-center">
-                          <div className="menu-wrap">
-                            <a
-                              href="#"
-                              className="menu-img img mb-4"
-                              style={{
-                                backgroundImage:
-                                  'url("/assets/images/dish-2.jpg")',
-                              }}
-                            ></a>
-                            <div className="text">
-                              <h3>
-                                <a href="#">Grilled Beef</a>
-                              </h3>
-                              <p>
-                                Far far away, behind the word mountains, far
-                                from the countries Vokalia and Consonantia.
-                              </p>
-                              <p className="price">
-                                <span>&#8373;2.90</span>
-                              </p>
-                              <p>
-                                <a
-                                  href="#"
-                                  className="btn btn-primary btn-outline-primary"
-                                >
-                                  Add to cart
-                                </a>
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="col-md-4 text-center">
-                          <div className="menu-wrap">
-                            <a
-                              href="#"
-                              className="menu-img img mb-4"
-                              style={{
-                                backgroundImage:
-                                  'url("/assets/images/dish-3.jpg")',
-                              }}
-                            ></a>
-                            <div className="text">
-                              <h3>
-                                <a href="#">Grilled Beef</a>
-                              </h3>
-                              <p>
-                                Far far away, behind the word mountains, far
-                                from the countries Vokalia and Consonantia.
-                              </p>
-                              <p className="price">
-                                <span>&#8373;2.90</span>
-                              </p>
-                              <p>
-                                <a
-                                  href="#"
-                                  className="btn btn-primary btn-outline-primary"
-                                >
-                                  Add to cart
-                                </a>
-                              </p>
-                            </div>
-                          </div>
-                        </div>
+                <div className="col-md-12 align-items-center">
+                  <div className="row">
+                    {foodProduct?.length > 0 && filteredProducts?.length > 0 ? (
+                      filteredProducts.map((item) => (
+                        <HomeMenuItem key={item._id} item={item} />
+                      ))
+                    ) : (
+                      <div>
+                        <h1>No Products Yet</h1>
                       </div>
-                    </div>
-
-                    <div
-                      className="tab-pane fade"
-                      id="v-pills-2"
-                      role="tabpanel"
-                      aria-labelledby="v-pills-2-tab"
-                    >
-                      <div className="row">
-                        <div className="col-md-4 text-center">
-                          <div className="menu-wrap">
-                            <a
-                              href="#"
-                              className="menu-img img mb-4"
-                              style={{
-                                backgroundImage:
-                                  'url("/assets/images/drink-1.jpg")',
-                              }}
-                            ></a>
-                            <div className="text">
-                              <h3>
-                                <a href="#">Lemonade Juice</a>
-                              </h3>
-                              <p>
-                                Far far away, behind the word mountains, far
-                                from the countries Vokalia and Consonantia.
-                              </p>
-                              <p className="price">
-                                <span>&#8373;2.90</span>
-                              </p>
-                              <p>
-                                <a
-                                  href="#"
-                                  className="btn btn-primary btn-outline-primary"
-                                >
-                                  Add to cart
-                                </a>
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="col-md-4 text-center">
-                          <div className="menu-wrap">
-                            <a
-                              href="#"
-                              className="menu-img img mb-4"
-                              style={{
-                                backgroundImage:
-                                  'url("/assets/images/drink-2.jpg")',
-                              }}
-                            ></a>
-                            <div className="text">
-                              <h3>
-                                <a href="#">Pineapple Juice</a>
-                              </h3>
-                              <p>
-                                Far far away, behind the word mountains, far
-                                from the countries Vokalia and Consonantia.
-                              </p>
-                              <p className="price">
-                                <span>&#8373;2.90</span>
-                              </p>
-                              <p>
-                                <a
-                                  href="#"
-                                  className="btn btn-primary btn-outline-primary"
-                                >
-                                  Add to cart
-                                </a>
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="col-md-4 text-center">
-                          <div className="menu-wrap">
-                            <a
-                              href="#"
-                              className="menu-img img mb-4"
-                              style={{
-                                backgroundImage:
-                                  'url("/assets/images/drink-3.jpg")',
-                              }}
-                            ></a>
-                            <div className="text">
-                              <h3>
-                                <a href="#">Soda Drinks</a>
-                              </h3>
-                              <p>
-                                Far far away, behind the word mountains, far
-                                from the countries Vokalia and Consonantia.
-                              </p>
-                              <p className="price">
-                                <span>&#8373;2.90</span>
-                              </p>
-                              <p>
-                                <a
-                                  href="#"
-                                  className="btn btn-primary btn-outline-primary"
-                                >
-                                  Add to cart
-                                </a>
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div
-                      className="tab-pane fade"
-                      id="v-pills-3"
-                      role="tabpanel"
-                      aria-labelledby="v-pills-3-tab"
-                    >
-                      <div className="row">
-                        <div className="col-md-4 text-center">
-                          <div className="menu-wrap">
-                            <a
-                              href="#"
-                              className="menu-img img mb-4"
-                              style={{
-                                backgroundImage:
-                                  'url("/assets/images/dessert-1.jpg")',
-                              }}
-                            ></a>
-                            <div className="text">
-                              <h3>
-                                <a href="#">Hot Cake Honey</a>
-                              </h3>
-                              <p>
-                                Far far away, behind the word mountains, far
-                                from the countries Vokalia and Consonantia.
-                              </p>
-                              <p className="price">
-                                <span>&#8373;2.90</span>
-                              </p>
-                              <p>
-                                <a
-                                  href="#"
-                                  className="btn btn-primary btn-outline-primary"
-                                >
-                                  Add to cart
-                                </a>
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="col-md-4 text-center">
-                          <div className="menu-wrap">
-                            <a
-                              href="#"
-                              className="menu-img img mb-4"
-                              style={{
-                                backgroundImage:
-                                  'url("/assets/images/dessert-2.jpg")',
-                              }}
-                            ></a>
-                            <div className="text">
-                              <h3>
-                                <a href="#">Hot Cake Honey</a>
-                              </h3>
-                              <p>
-                                Far far away, behind the word mountains, far
-                                from the countries Vokalia and Consonantia.
-                              </p>
-                              <p className="price">
-                                <span>&#8373;2.90</span>
-                              </p>
-                              <p>
-                                <a
-                                  href="#"
-                                  className="btn btn-primary btn-outline-primary"
-                                >
-                                  Add to cart
-                                </a>
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="col-md-4 text-center">
-                          <div className="menu-wrap">
-                            <a
-                              href="#"
-                              className="menu-img img mb-4"
-                              style={{
-                                backgroundImage:
-                                  'url("/assets/images/dessert-3.jpg")',
-                              }}
-                            ></a>
-                            <div className="text">
-                              <h3>
-                                <a href="#">Hot Cake Honey</a>
-                              </h3>
-                              <p>
-                                Far far away, behind the word mountains, far
-                                from the countries Vokalia and Consonantia.
-                              </p>
-                              <p className="price">
-                                <span>&#8373;2.90</span>
-                              </p>
-                              <p>
-                                <a
-                                  href="#"
-                                  className="btn btn-primary btn-outline-primary"
-                                >
-                                  Add to cart
-                                </a>
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+                    )}
                   </div>
                 </div>
               </div>

@@ -1,30 +1,14 @@
-import React from "react";
+import React from 'react';
+import Image from 'next/image';
+import Pulse from 'react-reveal/Pulse';
 
 const Loader = () => {
   return (
     <>
       <div id="ftco-loader" className="show fullscreen">
-        <svg className="circular" width="48px" height="48px">
-          <circle
-            className="path-bg"
-            cx="24"
-            cy="24"
-            r="22"
-            fill="none"
-            strokeWidth="4"
-            stroke="#eeeeee"
-          />
-          <circle
-            className="path"
-            cx="24"
-            cy="24"
-            r="22"
-            fill="none"
-            strokeWidth="4"
-            strokeMiterlimit="10"
-            stroke="#F96D00"
-          />
-        </svg>
+        <Pulse forever={true}>
+          <Image src="/assets/images/logo.jpg" alt="" height={50} width={100} />
+        </Pulse>
       </div>
     </>
   );

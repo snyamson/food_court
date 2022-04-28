@@ -1,5 +1,5 @@
 body {
-  font-family: "Poppins", Arial, sans-serif;
+  font-family: 'Poppins', Arial, sans-serif;
   background: #151111;
   font-size: 15px;
   line-height: 1.8;
@@ -46,7 +46,7 @@ h5,
   line-height: 1.4;
   color: #fff;
   font-weight: 400;
-  font-family: "Josefin Sans", Arial, sans-serif;
+  font-family: 'Josefin Sans', Arial, sans-serif;
 }
 
 .text-primary {
@@ -71,7 +71,7 @@ h5,
 }
 .ftco-navbar-light .navbar-brand {
   color: #fff;
-  font-family: "Josefin Sans", Arial, sans-serif;
+  font-family: 'Josefin Sans', Arial, sans-serif;
 }
 @media (min-width: 768px) {
   .ftco-navbar-light .navbar-brand {
@@ -138,7 +138,7 @@ h5,
 }
 .ftco-navbar-light .navbar-nav > .nav-item.ftco-seperator:before {
   position: absolute;
-  content: "";
+  content: '';
   top: 10px;
   bottom: 10px;
   left: 0;
@@ -419,7 +419,7 @@ h5,
   }
 }
 .owl-carousel.home-slider .slider-item .slider-text .subheading {
-  font-family: "Great Vibes", cursive;
+  font-family: 'Great Vibes', cursive;
   font-size: 30px;
   color: #fd0000;
 }
@@ -433,7 +433,7 @@ h5,
 }
 .owl-carousel.home-slider .slider-item .slider-text h1 strong {
   color: #fff;
-  font-family: "Josefin Sans", Arial, sans-serif;
+  font-family: 'Josefin Sans', Arial, sans-serif;
   font-size: 50px;
 }
 @media (max-width: 991.98px) {
@@ -812,7 +812,7 @@ h5,
   bottom: 0;
   width: 50px;
   height: 50px;
-  content: "";
+  content: '';
   background: #fd0000;
   z-index: -1;
   -moz-transition: all 0.6s ease;
@@ -870,7 +870,7 @@ h5,
   bottom: 35%;
   left: 0;
   right: 0;
-  content: "";
+  content: '';
   width: 100%;
   height: 1px;
   border-bottom: 1px dashed #674c27;
@@ -899,7 +899,7 @@ h5,
 }
 .menu-entry .img {
   display: block;
-  height: 200px;
+  height: 270px;
 }
 .menu-entry .text h3 {
   font-size: 18px;
@@ -1441,7 +1441,7 @@ h5,
   left: 0;
   right: 0;
   bottom: 0;
-  content: "";
+  content: '';
   background: #000;
   opacity: 0.1;
   z-index: -1;
@@ -1572,9 +1572,9 @@ textarea.form-control {
   text-transform: uppercase;
   letter-spacing: 0.5em;
   color: #d4d4d4;
-  font-family: "Work Sans", -apple-system, BlinkMacSystemFont, "Segoe UI",
-    Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
-    "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: 'Work Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji',
+    'Segoe UI Emoji', 'Segoe UI Symbol';
   font-weight: 300;
 }
 
@@ -1742,7 +1742,7 @@ textarea.form-control {
   font-size: 50px;
   display: block;
   margin-bottom: 0;
-  font-family: "Great Vibes", cursive;
+  font-family: 'Great Vibes', cursive;
   color: #fd0000;
   line-height: 1;
   margin-bottom: -21px;
@@ -1773,7 +1773,7 @@ textarea.form-control {
   bottom: 4px;
   left: -100px;
   right: 0;
-  content: "";
+  content: '';
   width: 40px;
   height: 1px;
   background: #423119;
@@ -1784,7 +1784,7 @@ textarea.form-control {
   bottom: 4px;
   left: 100px;
   right: 0;
-  content: "";
+  content: '';
   width: 40px;
   height: 1px;
   background: #423119;
@@ -1800,7 +1800,7 @@ textarea.form-control {
   right: 0;
   width: 6px;
   height: 6px;
-  content: "";
+  content: '';
   background: #fd0000;
   -webkit-transform: rotate(135deg);
   -ms-transform: rotate(135deg);
@@ -1814,7 +1814,7 @@ textarea.form-control {
   right: 0;
   width: 10px;
   height: 10px;
-  content: "";
+  content: '';
   background: #fd0000;
   -webkit-transform: rotate(135deg);
   -ms-transform: rotate(135deg);
@@ -1828,7 +1828,7 @@ textarea.form-control {
   right: 0;
   width: 6px;
   height: 6px;
-  content: "";
+  content: '';
   background: #fd0000;
   -webkit-transform: rotate(135deg);
   -ms-transform: rotate(135deg);
@@ -1850,7 +1850,7 @@ textarea.form-control {
   bottom: 4px;
   left: -100px;
   right: 0;
-  content: "";
+  content: '';
   width: 40px;
   height: 1px;
   background: #fd0000;
@@ -1861,7 +1861,7 @@ textarea.form-control {
   bottom: 4px;
   left: 100px;
   right: 0;
-  content: "";
+  content: '';
   width: 40px;
   height: 1px;
   background: #fd0000;
@@ -1949,7 +1949,7 @@ textarea.form-control {
   left: 0;
   right: 0;
   bottom: 0;
-  content: "";
+  content: '';
   border: 1px solid #fd0000;
   z-index: -1;
   -moz-transition: all 0.3s ease;
@@ -2022,6 +2022,7 @@ textarea.form-control {
   border-bottom: 1px solid #fd0000;
   margin-left: 5px;
   margin-right: 5px;
+  cursor: pointer;
 }
 .ftco-menu .nav-pills .nav-link.active,
 .ftco-menu .nav-pills .nav-link:hover {
@@ -2490,7 +2491,7 @@ textarea.form-control {
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
-  background-color: rgba(255, 255, 255, 0.9);
+  /* background-color: rgba(255, 255, 255, 0.9); */
   -webkit-box-shadow: 0px 24px 64px rgba(0, 0, 0, 0.24);
   box-shadow: 0px 24px 64px rgba(0, 0, 0, 0.24);
   border-radius: 16px;
@@ -2508,10 +2509,13 @@ textarea.form-control {
   top: 0;
   width: 100%;
   height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   -webkit-transform: none;
   -ms-transform: none;
   transform: none;
-  background-color: #fff;
+  background-color: #151111;
   border-radius: 0;
   -webkit-box-shadow: none;
   box-shadow: none;
@@ -2525,7 +2529,7 @@ textarea.form-control {
   opacity: 1;
 }
 
-#ftco-loader .circular {
+/* #ftco-loader .circular {
   -webkit-animation: loader-rotate 2s linear infinite;
   animation: loader-rotate 2s linear infinite;
   position: absolute;
@@ -2535,9 +2539,9 @@ textarea.form-control {
   -webkit-transform: rotate(0deg);
   -ms-transform: rotate(0deg);
   transform: rotate(0deg);
-}
+} */
 
-#ftco-loader .path {
+/* #ftco-loader .path {
   stroke-dasharray: 1, 200;
   stroke-dashoffset: 0;
   -webkit-animation: loader-dash 1.5s ease-in-out infinite;
@@ -2587,4 +2591,4 @@ textarea.form-control {
     stroke-dasharray: 89, 200;
     stroke-dashoffset: -136px;
   }
-}
+} */
