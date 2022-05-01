@@ -1,4 +1,5 @@
 import imageBuilder from '@sanity/image-url';
+import { useNextSanityImage } from 'next-sanity-image';
 import client from './client';
 
 const urlForThumbnail = (source) => {
@@ -9,4 +10,8 @@ const urlFor = (source) => {
   return imageBuilder(client).image(source).url();
 };
 
-export { urlForThumbnail, urlFor };
+const useImageProps = (source) => {
+  return useNextSanityImage(client, source);
+};
+
+export { urlForThumbnail, urlFor, useImageProps };

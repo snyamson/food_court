@@ -1,4 +1,5 @@
 import { Store } from 'pullstate';
+import jsCookie from 'js-cookie';
 
 export const AppStore = new Store({
   mainDish: [],
@@ -9,6 +10,11 @@ export const AppStore = new Store({
   foodProduct: [],
   pizzaPriceList: [],
   foodCategory: [],
+  cart: {
+    cartItems: jsCookie.get('cartItems')
+      ? JSON.parse(jsCookie.get('cartItems'))
+      : [],
+  },
   error: '',
   loading: true,
 });

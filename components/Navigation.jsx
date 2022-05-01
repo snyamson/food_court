@@ -1,7 +1,9 @@
-import Link from "next/link";
-import Image from "next/image";
+import Link from 'next/link';
+import Image from 'next/image';
+import { useCart } from 'react-use-cart';
 
 const Navigation = () => {
+  const { totalUniqueItems } = useCart();
   return (
     <>
       <nav
@@ -62,7 +64,7 @@ const Navigation = () => {
                   <a className="nav-link">
                     <span className="icon icon-shopping_cart"></span>
                     <span className="bag d-flex justify-content-center align-items-center">
-                      <small>1</small>
+                      <small>{totalUniqueItems}</small>
                     </span>
                   </a>
                 </Link>

@@ -1,11 +1,9 @@
 import dynamic from 'next/dynamic';
 import { useState } from 'react';
-import { AppStore } from '../utils/store';
 import HomeMenuItem from './HomeMenuItem';
 const MenuHead = dynamic(() => import('../containers/MenuHead'));
 
-const HomeMenu = () => {
-  const { foodCategory, foodProduct } = AppStore.useState((s) => s);
+const HomeMenu = ({ foodCategory, foodProduct }) => {
   const [selected, setSelected] = useState('Pizza');
 
   const filteredProducts = foodProduct.filter((item) =>
@@ -28,7 +26,6 @@ const HomeMenu = () => {
       </a>
     );
   };
-
   return (
     <>
       <section className="ftco-menu">
@@ -41,13 +38,15 @@ const HomeMenu = () => {
               <div className="row">
                 <div className="col-md-12 nav-link-wrap mb-5">
                   <div className="nav  nav-pills justify-content-center">
-                    {foodCategory.map((category) => (
-                      <CategoryItem
-                        key={category._id}
-                        category={category}
-                        onClick={() => handleCategorySelect(category.title)}
-                      />
-                    ))}
+                    {foodCategory
+                      .filter((item) => item.title !== 'Starters')
+                      .map((category) => (
+                        <CategoryItem
+                          key={category._id}
+                          category={category}
+                          onClick={() => handleCategorySelect(category.title)}
+                        />
+                      ))}
                   </div>
                 </div>
                 <div className="col-md-12 align-items-center">
