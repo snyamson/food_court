@@ -1,7 +1,9 @@
+import Link from 'next/link';
 import { useCart } from 'react-use-cart';
 
 const Cart = () => {
-  const { items, removeItem, isEmpty } = useCart();
+  const { items, removeItem, isEmpty, updateItemQuantity, cartTotal } =
+    useCart();
 
   return (
     <>
@@ -9,7 +11,7 @@ const Cart = () => {
         <div className="container">
           <div className="row">
             <div className="col-md-12 ">
-              {true ? (
+              {isEmpty ? (
                 <h3
                   style={{
                     textAlign: 'center',
@@ -50,7 +52,9 @@ const Cart = () => {
                           </td>
 
                           <td className="product-name">
-                            <h3>{item?.name}</h3>
+                            <h3>
+                              {item?.name} {item?.size && `(${item.size})`}
+                            </h3>
                             <p>
                               Far far away, behind the word mountains, far from
                               the countries
@@ -61,99 +65,96 @@ const Cart = () => {
 
                           <td className="quantity">
                             <div className="input-group mb-3">
+                              <span className="input-group-btn mr-2">
+                                <button
+                                  type="button"
+                                  className="quantity-left-minus btn"
+                                  data-type="minus"
+                                  data-field=""
+                                  disabled={item?.quantity <= 1 ? true : null}
+                                  onClick={() =>
+                                    updateItemQuantity(
+                                      item.id,
+                                      item?.quantity - 1
+                                    )
+                                  }
+                                >
+                                  <i
+                                    className="icon-minus"
+                                    style={{ color: '#fff' }}
+                                  ></i>
+                                </button>
+                              </span>
                               <input
                                 type="text"
+                                id="quantity"
                                 name="quantity"
-                                className="quantity form-control input-number"
+                                className="form-control input-number"
                                 value={item?.quantity}
+                                readOnly
                                 min="1"
                                 max="100"
-                                readOnly
                               />
+                              <span className="input-group-btn ml-2">
+                                <button
+                                  type="button"
+                                  className="quantity-right-plus btn"
+                                  data-type="plus"
+                                  data-field=""
+                                  onClick={() =>
+                                    updateItemQuantity(
+                                      item.id,
+                                      item?.quantity + 1
+                                    )
+                                  }
+                                >
+                                  <i
+                                    className="icon-plus"
+                                    style={{ color: '#fff' }}
+                                  ></i>
+                                </button>
+                              </span>
                             </div>
                           </td>
 
                           <td className="total">&#8373;{item?.itemTotal}</td>
                         </tr>
                       ))}
-
-                      {/* <!-- END TR--> */}
-
-                      {/* <tr className="text-center">
-                      <td className="product-remove">
-                        <a href="#">
-                          <span className="icon-close"></span>
-                        </a>
-                      </td>
-
-                      <td className="image-prod">
-                        <div
-                          className="img"
-                          style={{
-                            backgroundImage: 'url("/assets/images/dish-2.jpg")',
-                          }}
-                        ></div>
-                      </td>
-
-                      <td className="product-name">
-                        <h3>Grilled Ribs Beef</h3>
-                        <p>
-                          Far far away, behind the word mountains, far from the
-                          countries
-                        </p>
-                      </td>
-
-                      <td className="price">$15.70</td>
-
-                      <td className="quantity">
-                        <div className="input-group mb-3">
-                          <input
-                            type="text"
-                            name="quantity"
-                            className="quantity form-control input-number"
-                            value="1"
-                            min="1"
-                            max="100"
-                          />
-                        </div>
-                      </td>
-
-                      <td className="total">$15.70</td>
-                    </tr> */}
-                      {/* <!-- END TR--> */}
                     </tbody>
                   </table>
                 </div>
               )}
             </div>
           </div>
-          {true && (
+          {!isEmpty && (
             <div className="row justify-content-end">
               <div className="col col-lg-3 col-md-6 mt-5 cart-wrap ">
                 <div className="cart-total mb-3">
                   <h3>Cart Total</h3>
                   <p className="d-flex">
                     <span>Subtotal</span>
-                    <span>$20.60</span>
+                    <span>&#8373;{cartTotal}</span>
                   </p>
                   <p className="d-flex">
                     <span>Delivery</span>
-                    <span>$0.00</span>
+                    <span>&#8373;0.00</span>
                   </p>
                   <p className="d-flex">
                     <span>Discount</span>
-                    <span>$3.00</span>
+                    <span>&#8373;0.00</span>
                   </p>
                   <hr />
                   <p className="d-flex total-price">
                     <span>Total</span>
-                    <span>$17.60</span>
+                    <span>&#8373;{cartTotal}</span>
                   </p>
                 </div>
                 <p className="text-center">
-                  <a href="checkout.html" className="btn btn-primary py-3 px-4">
-                    Proceed to Checkout
-                  </a>
+                  <Link href="/checkout">
+                    <a className="btn btn-primary py-3 px-4">
+                      Proceed to Checkout
+                    </a>
+                  </Link>
                 </p>
               </div>
             </div>

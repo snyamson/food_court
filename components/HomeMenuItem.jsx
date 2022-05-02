@@ -1,10 +1,33 @@
+import axios from 'axios';
 import Link from 'next/link';
+import { useState } from 'react';
+import { toast } from 'react-toastify';
+import { useCart } from 'react-use-cart';
 import { urlForThumbnail } from '../utils/image';
 
 const HomeMenuItem = ({ item, col = 'col-md-4' }) => {
-  const formatHref = (item) => {
-    const { category, slug } = item;
-    return `/${category}/${slug.current}`;
+  const { addItem } = useCart();
+  const [addToCart, setAddToCart] = useState(false);
+
+  const addToCartHandler = async () => {
+    setAddToCart(true);
+    const { data } = await axios.get(`/api/product/${item._id}`);
+
+    const newItem = {
+      id: data._id,
+      name: data.title,
+      slug: data.slug.current,
+      price: data.price,
+      size: data.category.includes('Pizza') ? 'Large' : null,
+      image: urlForThumbnail(data.mainImage),
+    };
+
+    addItem(newItem);
+
+    toast.success(`${newItem.name} added to cart!`, {
+      position: toast.POSITION.TOP_CENTER,
+    });
+    setAddToCart(false);
   };
 
   return (
@@ -30,11 +53,12 @@ const HomeMenuItem = ({ item, col = 'col-md-4' }) => {
               <span>&#8373;{item?.price}</span>
             </p>
             <p>
-              <Link href="/">
-                <a className="btn btn-primary btn-outline-primary">
-                  Add to Cart
-                </a>
-              </Link>
+              <a
+                onClick={addToCartHandler}
+                className="btn btn-primary btn-outline-primary"
+              >
+                {addToCart ? 'Processing' : ' Add to Cart'}
+              </a>
             </p>
           </div>
         </div>

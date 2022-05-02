@@ -1,16 +1,16 @@
-/* eslint-disable @next/next/no-img-element */
-import Link from 'next/link';
 import Image from 'next/image';
 import { useState } from 'react';
-import client from '../../utils/client';
-import { urlForThumbnail, useImageProps } from '../../utils/image';
 import axios from 'axios';
 import { useCart } from 'react-use-cart';
+import { toast } from 'react-toastify';
+import client from '../../utils/client';
+import { urlForThumbnail, useImageProps } from '../../utils/image';
 
 const Index = ({ productDetail, pizzaPriceList }) => {
-  const { addItem, items } = useCart();
+  const { addItem } = useCart();
   const [selectedSize, setSelectedSize] = useState(pizzaPriceList[0]?.size);
   const [price, setPrice] = useState(productDetail?.price);
+  const [addToCart, setAddToCart] = useState(false);
 
   const handleSelectedSize = (e) => {
     setSelectedSize(e.target.value);
@@ -21,19 +21,23 @@ const Index = ({ productDetail, pizzaPriceList }) => {
   };
 
   const addToCartHandler = async () => {
+    setAddToCart(true);
     const { data } = await axios.get(`/api/product/${productDetail._id}`);
 
     const newItem = {
       id: data._id,
       name: data.title,
       slug: data.slug.current,
-      price: data.price,
+      price: price ? price : data.price,
+      size: data.category.includes('Pizza') ? selectedSize : null,
       image: urlForThumbnail(data.mainImage),
     };
 
     addItem(newItem);
-
-    console.log(newItem.name + ' added to cart');
+    toast.success(`${newItem.name} added to cart!`, {
+      position: toast.POSITION.TOP_CENTER,
+    });
+    setAddToCart(false);
   };
 
   return (
@@ -90,48 +94,13 @@ const Index = ({ productDetail, pizzaPriceList }) => {
                 ) : null}
 
                 <div className="w-100"></div>
-                {/* <div className="input-group col-md-6 d-flex mb-3">
-                  <span className="input-group-btn mr-2">
-                    <button
-                      type="button"
-                      className="quantity-left-minus btn"
-                      data-type="minus"
-                      data-field=""
-                      disabled={quantity <= 1 ? true : null}
-                      onClick={handleDecrement}
-                    >
-                      <i className="icon-minus" style={{ color: '#fff' }}></i>
-                    </button>
-                  </span>
-                  <input
-                    type="text"
-                    id="quantity"
-                    name="quantity"
-                    className="form-control input-number"
-                    value={quantity}
-                    readOnly
-                    min="1"
-                    max="100"
-                  />
-                  <span className="input-group-btn ml-2">
-                    <button
-                      type="button"
-                      className="quantity-right-plus btn"
-                      data-type="plus"
-                      data-field=""
-                      onClick={handleIncrement}
-                    >
-                      <i className="icon-plus" style={{ color: '#fff' }}></i>
-                    </button>
-                  </span>
-                </div> */}
               </div>
               <div style={{ color: '#fff' }}>
                 <a
                   onClick={addToCartHandler}
                   className="btn btn-primary py-3 px-5"
                 >
-                  Add to Cart
+                  {addToCart ? 'Processing' : ' Add to Cart'}
                 </a>
               </div>
             </div>
